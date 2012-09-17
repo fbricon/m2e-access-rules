@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>m2e-access-rules</artifactId>
+		<groupId>org.jboss.tools.maven</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>org.jboss.tools.maven</groupId>
+	<artifactId>m2e-access-rules.site</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>eclipse-update-site</packaging>
+	<name>m2e-access-rules :: update site</name>
+	<build>
+		<plugins>
+         <plugin>
+             <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-packaging-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <configuration>
+              <metadataRepositoryName>m2e-access-rules Plugin</metadataRepositoryName>
+			  <artifactRepositoryName>m2e-access-rules Plugin</artifactRepositoryName>
+            </configuration>
+          </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

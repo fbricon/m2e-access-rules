@@ -28,7 +28,7 @@ import org.eclipse.wst.server.core.IRuntimeWorkingCopy;
 
 public class AccessRulesProjectConfigurator extends AbstractProjectConfigurator implements IJavaProjectConfigurator {
 
-	private IRuntime mockRuntime = new IRuntime() {
+	private static IRuntime mockRuntime = new IRuntime() {
 		
 		public IStatus validate(IProgressMonitor arg0) {
 			// TODO Auto-generated method stub
